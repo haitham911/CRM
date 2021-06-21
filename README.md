@@ -129,6 +129,12 @@ yarn
 :: or
 npm install
 ```
+If that doesn't work, try running these in order:
+npm install
+npm cache clean --force
+npm install -g npm
+npm install
+
 3. Choose one of the following templates:
 - `empty`,
 - `simple-crud`,
