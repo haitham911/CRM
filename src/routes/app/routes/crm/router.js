@@ -19,8 +19,8 @@ import Tasks from './routes/tasks/Index.vue'
 
 let crmRoutes = [
   {
-    path: 'companies',
-    name: 'companies',
+    path: 'leads',
+    name: 'leads',
     component: Companies,
   },
   {

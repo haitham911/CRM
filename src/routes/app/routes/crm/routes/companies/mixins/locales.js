@@ -7,6 +7,7 @@ export default {
           goToItem: 'Przejdź do firmy',
         },
         fields: {
+          Leads: 'Leads',
           id: 'Id',
           name: 'Nazwa',
           commonName: 'Nazwa użytkowa',
@@ -54,9 +55,9 @@ export default {
         },
       },
       en: {
-        detailsTitle: 'Company',
+        detailsTitle: 'Leads Sync',
         buttons: {
-          goToItem: 'Go to company',
+          goToItem: 'Go to lead',
         },
         fields: {
           id: 'Id',

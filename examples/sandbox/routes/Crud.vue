@@ -1,51 +1,24 @@
 <template>
   <div style="margin:20px;">
-    <v-row
-      wrap
-      mb-5
-    >
-      <v-col
-        cols="12"
-        xs="12"
-      >
-        <v-tabs
-          v-model="activeTab"
-          slider-color="primary"
-        >
-          <v-tab
-            key="crudConfig"
-            ripple
-          >
+    <v-row wrap mb-5>
+      <v-col cols="12" xs="12">
+        <v-tabs v-model="activeTab" slider-color="primary">
+          <v-tab key="crudConfig" ripple>
             CRUD Configuration
           </v-tab>
-          <v-tab
-            key="fieldsConfig"
-            ripple
-          >
+          <v-tab key="fieldsConfig" ripple>
             Fields Configuration
           </v-tab>
-          <v-tab
-            key="customButtons"
-            ripple
-          >
+          <v-tab key="customButtons" ripple>
             Custom buttons
           </v-tab>
-          <v-tab
-            key="template"
-            ripple
-          >
+          <v-tab key="template" ripple>
             Template
           </v-tab>
-          <v-tab
-            key="script"
-            ripple
-          >
+          <v-tab key="script" ripple>
             Script
           </v-tab>
-          <v-tab
-            key="otherSites"
-            ripple
-          >
+          <v-tab key="otherSites" ripple>
             Other sites
           </v-tab>
 
@@ -53,99 +26,32 @@
             <v-card flat>
               <v-card-text>
                 <v-row wrap>
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
-                    <v-text-field
-                      label="detailsTitle"
-                      v-model="detailsTitle"
-                    />
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
+                    <v-text-field label="detailsTitle" v-model="detailsTitle" />
                     <v-select
                       label="deleteMode"
                       :items="['none', 'soft', 'hard', 'both', 'filter']"
                       v-model="deleteMode"
                     />
-                    <v-switch
-                      color="green"
-                      label="refreshButton"
-                      v-model="refreshButton"
-                    />
+                    <v-switch color="green" label="refreshButton" v-model="refreshButton" />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
-                    <v-switch
-                      color="green"
-                      label="exportButton"
-                      v-model="exportButton"
-                    />
-                    <v-switch
-                      color="green"
-                      label="fieldFilters"
-                      v-model="fieldFilters"
-                    />
-                    <v-switch
-                      color="green"
-                      label="mainFilter"
-                      v-model="mainFilter"
-                    />
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
+                    <v-switch color="green" label="exportButton" v-model="exportButton" />
+                    <v-switch color="green" label="fieldFilters" v-model="fieldFilters" />
+                    <v-switch color="green" label="mainFilter" v-model="mainFilter" />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
-                    <v-switch
-                      color="green"
-                      label="createMode"
-                      v-model="createMode"
-                    />
-                    <v-switch
-                      color="green"
-                      label="editMode"
-                      v-model="editMode"
-                    />
-                    <v-switch
-                      color="green"
-                      label="editButton"
-                      v-model="editButton"
-                    />
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
+                    <v-switch color="green" label="createMode" v-model="createMode" />
+                    <v-switch color="green" label="editMode" v-model="editMode" />
+                    <v-switch color="green" label="editButton" v-model="editButton" />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
-                    <v-switch
-                      color="green"
-                      label="selectManyMode"
-                      v-model="selectManyMode"
-                    />
-                    <v-switch
-                      color="green"
-                      label="updateManyMode"
-                      v-model="updateManyMode"
-                    />
-                    <v-switch
-                      color="green"
-                      label="removeManyMode"
-                      v-model="removeManyMode"
-                    />
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
+                    <v-switch color="green" label="selectManyMode" v-model="selectManyMode" />
+                    <v-switch color="green" label="updateManyMode" v-model="updateManyMode" />
+                    <v-switch color="green" label="removeManyMode" v-model="removeManyMode" />
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -155,202 +61,52 @@
             <v-card flat>
               <v-card-text>
                 <v-row wrap>
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
                     <h3>ID</h3>
-                    <v-switch
-                      color="green"
-                      label="Show in table"
-                      v-model="idTable"
-                    />
-                    <v-select
-                      label="Field type"
-                      :items="[]"
-                      disabled
-                    />
-                    <v-switch
-                      color="green"
-                      label="Details"
-                      v-model="falseConst"
-                      disabled
-                    />
-                    <v-switch
-                      color="green"
-                      label="Required"
-                      v-model="falseConst"
-                      disabled
-                    />
-                    <v-switch
-                      color="green"
-                      label="Multiedit"
-                      v-model="falseConst"
-                      disabled
-                    />
-                    <v-select
-                      label="Text mode"
-                      :items="['text']"
-                      value="text"
-                      disabled
-                    />
-                    <v-select
-                      label="Functions"
-                      :items="['boolean']"
-                      :value="[]"
-                      multiple
-                      disabled
-                    />
+                    <v-switch color="green" label="Show in table" v-model="idTable" />
+                    <v-select label="Field type" :items="[]" disabled />
+                    <v-switch color="green" label="Details" v-model="falseConst" disabled />
+                    <v-switch color="green" label="Required" v-model="falseConst" disabled />
+                    <v-switch color="green" label="Multiedit" v-model="falseConst" disabled />
+                    <v-select label="Text mode" :items="['text']" value="text" disabled />
+                    <v-select label="Functions" :items="['boolean']" :value="[]" multiple disabled />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
                     <h3>Name</h3>
-                    <v-switch
-                      color="green"
-                      label="Show in table"
-                      v-model="nameTable"
-                    />
-                    <v-select
-                      label="Field type"
-                      :items="['input']"
-                      disabled
-                      value="input"
-                    />
-                    <v-switch
-                      color="green"
-                      label="Details"
-                      v-model="trueConst"
-                      disabled
-                    />
-                    <v-switch
-                      color="green"
-                      label="Required"
-                      v-model="trueConst"
-                      disabled
-                    />
-                    <v-switch
-                      color="green"
-                      label="Multiedit"
-                      v-model="falseConst"
-                      disabled
-                    />
-                    <v-select
-                      label="Text mode"
-                      :items="['text']"
-                      value="text"
-                      disabled
-                    />
-                    <v-select
-                      label="Functions"
-                      :items="['boolean']"
-                      :value="[]"
-                      multiple
-                      disabled
-                    />
+                    <v-switch color="green" label="Show in table" v-model="nameTable" />
+                    <v-select label="Field type" :items="['input']" disabled value="input" />
+                    <v-switch color="green" label="Details" v-model="trueConst" disabled />
+                    <v-switch color="green" label="Required" v-model="trueConst" disabled />
+                    <v-switch color="green" label="Multiedit" v-model="falseConst" disabled />
+                    <v-select label="Text mode" :items="['text']" value="text" disabled />
+                    <v-select label="Functions" :items="['boolean']" :value="[]" multiple disabled />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
                     <h3>Description</h3>
-                    <v-switch
-                      color="green"
-                      label="Show in table"
-                      v-model="descriptionTable"
-                    />
+                    <v-switch color="green" label="Show in table" v-model="descriptionTable" />
                     <v-select
                       label="Field type"
                       :items="['input', 'textarea', 'richTextBox']"
                       v-model="descriptionFieldType"
                     />
-                    <v-switch
-                      color="green"
-                      label="Details"
-                      v-model="descriptionDetails"
-                    />
-                    <v-switch
-                      color="green"
-                      label="Required"
-                      v-model="descriptionRequired"
-                    />
-                    <v-switch
-                      color="green"
-                      label="Multiedit"
-                      v-model="descriptionMultiedit"
-                    />
-                    <v-select
-                      label="Text mode"
-                      :items="['text', 'html']"
-                      v-model="descriptionTextMode"
-                    />
-                    <v-select
-                      label="Functions"
-                      :items="['boolean']"
-                      :value="[]"
-                      multiple
-                      disabled
-                    />
+                    <v-switch color="green" label="Details" v-model="descriptionDetails" />
+                    <v-switch color="green" label="Required" v-model="descriptionRequired" />
+                    <v-switch color="green" label="Multiedit" v-model="descriptionMultiedit" />
+                    <v-select label="Text mode" :items="['text', 'html']" v-model="descriptionTextMode" />
+                    <v-select label="Functions" :items="['boolean']" :value="[]" multiple disabled />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    lg="3"
-                    px-5
-                  >
+                  <v-col cols="12" xs="12" md="6" lg="3" px-5>
                     <h3>Activity</h3>
-                    <v-switch
-                      color="green"
-                      label="Show in table"
-                      v-model="activeTable"
-                    />
-                    <v-select
-                      label="Field type"
-                      :items="['checkbox']"
-                      disabled
-                      value="checkbox"
-                    />
-                    <v-switch
-                      color="green"
-                      label="Details"
-                      v-model="activeDetails"
-                    />
-                    <v-switch
-                      color="green"
-                      label="Required"
-                      v-model="trueConst"
-                      disabled
-                    />
-                    <v-switch
-                      color="green"
-                      label="Multiedit"
-                      v-model="activeMultiedit"
-                    />
-                    <v-select
-                      label="Text mode"
-                      :items="['text', 'html']"
-                      v-model="activeTextMode"
-                    />
-                    <v-select
-                      label="Functions"
-                      :items="['boolean']"
-                      v-model="activeFunctions"
-                      multiple
-                    />
+                    <v-switch color="green" label="Show in table" v-model="activeTable" />
+                    <v-select label="Field type" :items="['checkbox']" disabled value="checkbox" />
+                    <v-switch color="green" label="Details" v-model="activeDetails" />
+                    <v-switch color="green" label="Required" v-model="trueConst" disabled />
+                    <v-switch color="green" label="Multiedit" v-model="activeMultiedit" />
+                    <v-select label="Text mode" :items="['text', 'html']" v-model="activeTextMode" />
+                    <v-select label="Functions" :items="['boolean']" v-model="activeFunctions" multiple />
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -361,30 +117,12 @@
             <v-card flat>
               <v-card-text>
                 <v-row wrap>
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    px-5
-                  >
-                    <v-switch
-                      color="green"
-                      label="Show alert button"
-                      v-model="showButton1"
-                    />
+                  <v-col cols="12" xs="12" md="6" px-5>
+                    <v-switch color="green" label="Show alert button" v-model="showButton1" />
                   </v-col>
 
-                  <v-col
-                    cols="12"
-                    xs="12"
-                    md="6"
-                    px-5
-                  >
-                    <v-switch
-                      color="green"
-                      label="Show form button"
-                      v-model="showButton2"
-                    />
+                  <v-col cols="12" xs="12" md="6" px-5>
+                    <v-switch color="green" label="Show form button" v-model="showButton2" />
                   </v-col>
                 </v-row>
               </v-card-text>
@@ -393,31 +131,19 @@
           <v-tab-item key="template">
             <v-card flat>
               <v-card-text text-xs-center>
-                <code
-                  style="width:100%;max-height: 400px;overflow-y:auto"
-                  v-text="template"
-                ></code>
+                <code style="width:100%;max-height: 400px;overflow-y:auto" v-text="template"></code>
               </v-card-text>
             </v-card>
           </v-tab-item>
           <v-tab-item key="script">
-            <v-card
-              flat
-              style="max-height: 400px;overflow-y:auto"
-            >
+            <v-card flat style="max-height: 400px;overflow-y:auto">
               <v-card-text>
-                <code
-                  style="width:100%"
-                  v-text="script"
-                ></code>
+                <code style="width:100%" v-text="script"></code>
               </v-card-text>
             </v-card>
           </v-tab-item>
           <v-tab-item key="otherSites">
-            <v-card
-              flat
-              style="max-height: 400px;overflow-y:auto"
-            >
+            <v-card flat style="max-height: 400px;overflow-y:auto">
               <v-card-text>
                 <ul>
                   <li>
@@ -427,16 +153,10 @@
                     <router-link to="/login">Login demo/sandbox</router-link>
                   </li>
                   <li>
-                    <a
-                      href="https://github.com/what-crud/vue-crud"
-                      target="_blank"
-                    >GitHub</a>
+                    <a href="https://github.com/what-crud/vue-crud" target="_blank">GitHub</a>
                   </li>
                   <li>
-                    <a
-                      href="https://vue-crud.github.io/"
-                      target="_blank"
-                    >Docs</a>
+                    <a href="https://vue-crud.github.io/" target="_blank">Docs</a>
                   </li>
                 </ul>
               </v-card-text>
@@ -467,17 +187,10 @@
     >
     </crud>
     <alert-box></alert-box>
-    <v-dialog
-      v-model="dialog"
-      max-width="290"
-    >
+    <v-dialog v-model="dialog" max-width="290">
       <v-card>
-        <v-card-text>
-          id: {{ item.id}}
-        </v-card-text>
-        <v-card-text>
-          name: {{ item.name}}
-        </v-card-text>
+        <v-card-text> id: {{ item.id }} </v-card-text>
+        <v-card-text> name: {{ item.name }} </v-card-text>
       </v-card>
     </v-dialog>
   </div>
@@ -621,22 +334,73 @@ export default {
                 :path="path"
                 :pageTitle="pageTitle"
                 :fieldsInfo="fieldsInfo"
-                detailsTitle="${this.detailsTitle}" ${this.deleteMode === 'soft' ? '' : `
-                deleteMode="${this.deleteMode}"`} ${this.refreshButton ? '' : `
-                :refreshButton="false"`} ${this.exportButton ? '' : `
-                :exportButton="false"`} ${this.fieldFilters ? '' : `
-                :fieldFilters="false"`} ${this.mainFilter ? '' : `
-                :mainFilter="false"`} ${this.createMode ? '' : `
-                :createMode="false"`} ${this.editMode ? '' : `
-                :editMode="false"`} ${this.editButton ? '' : `
-                :editButton="false"`} ${this.selectManyMode ? '' : `
-                :selectManyMode="false"`} ${this.updateManyMode ? '' : `
-                :updateManyMode="false"`} ${this.removeManyMode ? '' : `
-                :removeManyMode="false"`} ${this.showButton1 || this.showButton2 ? `
-                :customButtons="buttons"` : ''}
+                detailsTitle="${this.detailsTitle}" ${
+  this.deleteMode === 'soft'
+    ? ''
+    : `
+                deleteMode="${this.deleteMode}"`
+} ${
+  this.refreshButton
+    ? ''
+    : `
+                :refreshButton="false"`
+} ${
+  this.exportButton
+    ? ''
+    : `
+                :exportButton="false"`
+} ${
+  this.fieldFilters
+    ? ''
+    : `
+                :fieldFilters="false"`
+} ${
+  this.mainFilter
+    ? ''
+    : `
+                :mainFilter="false"`
+} ${
+  this.createMode
+    ? ''
+    : `
+                :createMode="false"`
+} ${
+  this.editMode
+    ? ''
+    : `
+                :editMode="false"`
+} ${
+  this.editButton
+    ? ''
+    : `
+                :editButton="false"`
+} ${
+  this.selectManyMode
+    ? ''
+    : `
+                :selectManyMode="false"`
+} ${
+  this.updateManyMode
+    ? ''
+    : `
+                :updateManyMode="false"`
+} ${
+  this.removeManyMode
+    ? ''
+    : `
+                :removeManyMode="false"`
+} ${
+  this.showButton1 || this.showButton2
+    ? `
+                :customButtons="buttons"`
+    : ''
+}
               >
               </crud>
-              <alert-box></alert-box> ${!this.showButton2 ? '' : `
+              <alert-box></alert-box> ${
+  !this.showButton2
+    ? ''
+    : `
               <v-dialog
                 v-model="dialog"
                 max-width="290"
@@ -649,7 +413,8 @@ export default {
                     name: {{ item.name}}
                   </v-card-text>
                 </v-card>
-              </v-dialog>`}
+              </v-dialog>`
+}
             </div>
           </template>
         `
@@ -673,70 +438,134 @@ export default {
                   {
                     text: this.$t('fields.id'),
                     name: 'id',
-                    details: false, ${this.idTable ? '' : `
-                    table: false,`}
+                    details: false, ${
+  this.idTable
+    ? ''
+    : `
+                    table: false,`
+}
                   },
                   {
                     type: 'input',
                     column: 'name',
                     text: this.$t('fields.name'),
-                    name: 'name', ${this.nameTable ? '' : `
-                    table: false,`}
+                    name: 'name', ${
+  this.nameTable
+    ? ''
+    : `
+                    table: false,`
+}
                     multiedit: false,
                   },
                   {
                     type: ${this.descriptionFieldType},
                     column: 'description',
                     text: this.$t('fields.description'),
-                    name: 'description', ${this.descriptionTable ? '' : `
-                    table: false,`} ${this.descriptionDetails ? '' : `
-                    details: false,`} ${this.descriptionRequired ? '' : `
-                    required: false,`} ${this.descriptionMultiedit ? '' : `
-                    multiedit: false,`}
+                    name: 'description', ${
+  this.descriptionTable
+    ? ''
+    : `
+                    table: false,`
+} ${
+  this.descriptionDetails
+    ? ''
+    : `
+                    details: false,`
+} ${
+  this.descriptionRequired
+    ? ''
+    : `
+                    required: false,`
+} ${
+  this.descriptionMultiedit
+    ? ''
+    : `
+                    multiedit: false,`
+}
                   },
                   {
                     type: 'checkbox',
                     column: 'active',
                     text: this.$t('fields.active'),
-                    name: 'active', ${this.activeTable ? '' : `
-                    table: false,`} ${this.activeDetails ? '' : `
+                    name: 'active', ${
+  this.activeTable
+    ? ''
+    : `
+                    table: false,`
+} ${
+  this.activeDetails
+    ? ''
+    : `
                     create: false,
-                    details: false,`} ${this.activeMultiedit ? '' : `
-                    multiedit: false,`} ${this.activeFunctions.length === 0 ? '' : `
+                    details: false,`
+} ${
+  this.activeMultiedit
+    ? ''
+    : `
+                    multiedit: false,`
+} ${
+  this.activeFunctions.length === 0
+    ? ''
+    : `
                     apiObject: {
                       name: 'active',
                       functions: ${JSON.stringify(this.activeFunctions)}
-                    },`}
+                    },`
+}
                     textMode: ${this.activeTextMode},
                   },
                 ]
-              }, ${this.showButton1 || this.showButton2 ? `
-              buttons () { 
-                return [ ${this.showButton1 ? `
+              }, ${
+  this.showButton1 || this.showButton2
+    ? `
+              buttons () {
+                return [ ${
+  this.showButton1
+    ? `
                   {
                     name: 'showAlert',
                     icon: 'notification_important',
                     color: 'yellow',
                     text: this.$t('buttons.showAlert')
-                  },` : ''} ${this.showButton2 ? `
+                  },`
+    : ''
+} ${
+  this.showButton2
+    ? `
                   {
                     name: 'showForm',
                     icon: 'insert_comment',
                     color: 'blue',
                     text: this.$t('buttons.showForm')
-                  }` : ''}
+                  }`
+    : ''
+}
                 ]
-              },` : ''}
-            }, ${this.showButton1 || this.showButton2 ? `
-            methods: { ${this.showButton1 ? `
+              },`
+    : ''
+}
+            }, ${
+  this.showButton1 || this.showButton2
+    ? `
+            methods: { ${
+  this.showButton1
+    ? `
               showAlert (item) {
                 alert(\`id: \${item.id}, name: \${item.name}\`)
-              },` : ''} ${this.showButton2 ? `
+              },`
+    : ''
+} ${
+  this.showButton2
+    ? `
               showForm (item) {
                 this.item = item
                 this.dialog = true
-              }` : ''}
-            },` : ''}
+              }`
+    : ''
+}
+            },`
+    : ''
+}
             components: {
               Crud,
               AlertBox,

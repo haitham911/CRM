@@ -12,6 +12,7 @@ const mutations = {
   alertValidationError (state, obj) {
     state.alert.type = 'warning'
     let text = ''
+
     for (const key in obj) {
       text += `<div><strong>${key}: </strong>${obj[key].join(', ')}</div>`
     }

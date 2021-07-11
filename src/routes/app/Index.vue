@@ -21,21 +21,15 @@
         <v-list-item-title class="white--text">{{ userInfo.name }}</v-list-item-title>
       </template>
     </sidebar>
-    <toolbar
-      :profile-btn="profile"
-      :locales-btn="true"
-      :logout-btn="true"
-      color="primary"
-      :dark="true"
-    >
+    <toolbar :profile-btn="profile" :locales-btn="true" :logout-btn="true" color="primary" :dark="true">
       <template slot="left">
         <div class="headline d-none d-md-inline">
-          <template v-if="$store.state.app.module !=null">
-              {{ $t('global.routes.' + $store.state.app.module) }}
+          <template v-if="$store.state.app.module != null">
+            {{ $t('global.routes.' + $store.state.app.module) }}
           </template>
-          <template v-if="$store.state.app.page !=null">
-              <v-icon slot="divider">forward</v-icon>
-              {{ $t('global.routes.' + $store.state.app.page) }}
+          <template v-if="$store.state.app.page != null">
+            <v-icon slot="divider">forward</v-icon>
+            {{ $t('global.routes.' + $store.state.app.page) }}
           </template>
         </div>
       </template>
@@ -46,7 +40,6 @@
           <v-flex xs12>
             <v-card flat class="main-card">
               <v-card-text class="content-container">
-
                 <router-view style="margin: 0 auto;"></router-view>
 
                 <alert-box></alert-box>
@@ -56,14 +49,10 @@
         </v-layout>
       </v-container>
     </v-content>
-    <footnote
-      v-if="footer"
-      color="secondary"
-      :dark="true"
-    >
+    <footnote v-if="footer" color="secondary" :dark="true">
       <template slot="left">
         <a href="https://vue-crud.github.io/" target="_blank" style="color:white;text-decoration:none;">
-          <v-icon color="white">help</v-icon>  vue-crud.github.io
+          <v-icon color="white">help</v-icon> vue-crud.github.io
         </a>
       </template>
       <template slot="center">
@@ -101,48 +90,8 @@ export default {
         route: '/crm',
         children: [
           {
-            text: 'crm.companies',
-            route: '/companies',
-          },
-          {
-            text: 'crm.companyTypes',
-            route: '/company-types',
-          },
-          {
-            text: 'crm.companyFiles',
-            route: '/company-files',
-          },
-          {
-            text: 'crm.companyComments',
-            route: '/company-comments',
-          },
-          {
-            text: 'crm.companyCommentTypes',
-            route: '/company-comment-types',
-          },
-          {
-            text: 'crm.people',
-            route: '/people',
-          },
-          {
-            text: 'crm.personComments',
-            route: '/person-comments',
-          },
-          {
-            text: 'crm.personCommentTypes',
-            route: '/person-comment-types',
-          },
-          {
-            text: 'crm.positions',
-            route: '/positions',
-          },
-          {
-            text: 'crm.positionTasks',
-            route: '/position-tasks',
-          },
-          {
-            text: 'crm.tasks',
-            route: '/tasks',
+            text: 'crm.leads',
+            route: '/leads',
           },
         ],
       },

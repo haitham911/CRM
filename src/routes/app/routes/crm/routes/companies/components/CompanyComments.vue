@@ -1,16 +1,13 @@
 <template>
   <div>
-      <company-comments-table
-        :title="$t('global.routes.crm.companyComments')"
-        :fields-info="fileteredTableFields"
-        :details-loader="detailsLoader"
-        :table-data="childrenList(fileteredTableFields, [], 'id', childItemName, 'active')"
-        delete-mode="soft"
-      ></company-comments-table>
-      <company-comment-details
-        :details="details"
-        :fields-info="fileteredDetailsFields"
-      ></company-comment-details>
+    <company-comments-table
+      :title="$t('global.routes.crm.companyComments')"
+      :fields-info="fileteredTableFields"
+      :details-loader="detailsLoader"
+      :table-data="childrenList(fileteredTableFields, [], 'id', childItemName, 'active')"
+      delete-mode="soft"
+    ></company-comments-table>
+    <company-comment-details :details="details" :fields-info="fileteredDetailsFields"></company-comment-details>
   </div>
 </template>
 

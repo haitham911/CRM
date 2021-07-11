@@ -1,9 +1,4 @@
-import {
-  mapState,
-  mapGetters,
-  mapMutations,
-  mapActions,
-} from 'vuex'
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
   props: [
@@ -41,16 +36,10 @@ export default {
     ]),
     ...mapGetters('crud', ['itemsList']),
     selectedIds () {
-      return this.selected.map(item => item.meta.id)
+      return this.selected.map((item) => item.meta.id)
     },
     items () {
-      return this.itemsList(
-        this.tableFields,
-        this.meta,
-        this.primaryKey,
-        this.customButtons,
-        this.activeColumnName
-      )
+      return this.itemsList(this.tableFields, this.meta, this.primaryKey, this.customButtons, this.activeColumnName)
     },
     excelName () {
       return this.$t(`global.routes.${this.page}`)

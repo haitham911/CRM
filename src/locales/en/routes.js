@@ -3,6 +3,7 @@ export default {
     name: 'Home page',
   },
   crm: {
+    Leads: 'Leads',
     name: 'CRM',
     companies: 'Companies',
     people: 'People',
@@ -16,6 +17,7 @@ export default {
     tasks: 'Tasks',
     companyFiles: 'Companies - files',
     personFiles: 'People - files',
+    leads: 'Leads',
   },
   admin: {
     name: 'Administration',

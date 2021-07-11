@@ -9,12 +9,12 @@
       :fields-info="fieldsInfo"
       :details-title="$t('detailsTitle')"
       :edit-button="false"
+      :update-many-mode="false"
       :watch-for-creation="true"
+      delete-mode="both"
       primary-key="id"
     ></crud>
-    <item-details
-      :fields="itemFields"
-    ></item-details>
+    <item-details :fields="itemFields"></item-details>
   </div>
 </template>
 
@@ -24,10 +24,7 @@ import FieldsInfoMixin from './mixins/fields'
 import LocalesMixin from './mixins/locales'
 import ItemDetails from './components/ItemDetails.vue'
 import ExtendedControllerMixin from '@/utils/crud/mixins/extended-controller'
-import {
-  mapMutations,
-  mapActions,
-} from 'vuex'
+import { mapMutations, mapActions } from 'vuex'
 
 export default {
   mixins: [
@@ -42,12 +39,12 @@ export default {
   data () {
     return {
       prefix: 'crud/crm',
-      path: 'companies',
+      path: 'leads',
       paths: {
-        i: 'crm/companies',
-        sh: 'crm/companies',
+        i: 'crm/leads',
+        sh: 'crm/leads',
       },
-      pageTitle: 'crm.companies',
+      pageTitle: 'crm.Leads',
     }
   },
   computed: {
