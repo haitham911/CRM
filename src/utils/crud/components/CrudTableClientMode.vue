@@ -46,17 +46,14 @@
       multi-sort
       dense
     >
-      <template
-        v-for="(header, i) in headers"
-        v-slot:[`item.${header.value}`]="{ item }"
-      >
+      <template v-for="(header, i) in headers" v-slot:[`item.${header.value}`]="{ item }">
         <span :key="i">
           <list-item-actions
-            v-if="header.value==='actions'"
+            v-if="header.value === 'actions'"
             :item="item"
-            :edit-button='editButton'
-            :custom-buttons='customButtons'
-            :delete-mode='deleteMode'
+            :edit-button="editButton"
+            :custom-buttons="customButtons"
+            :delete-mode="deleteMode"
             :item-elements="itemElements"
             :edit-mode="editMode"
             :select-many-mode="selectManyMode"
@@ -69,15 +66,8 @@
             @doubleClick="resolveRowDoubleClick"
           />
           <span v-else>
-            <slot
-              :name="`field:${header.value}`"
-              :value="item[header.value]"
-              :item="item"
-            >
-              <list-item-field
-                :value="item[header.value]"
-                :text-mode="textMode(item, header.value)"
-              />
+            <slot :name="`field:${header.value}`" :value="item[header.value]" :item="item">
+              <list-item-field :value="item[header.value]" :text-mode="textMode(item, header.value)" />
             </slot>
           </span>
         </span>
@@ -96,11 +86,7 @@
 </template>
 
 <script>
-
-import {
-  mapState,
-  mapActions,
-} from 'vuex'
+import { mapState, mapActions } from 'vuex'
 
 import CrudInstanceMixin from '../mixins/crud-instance'
 import ControlsHandlerMixin from '../mixins/controls-handler'

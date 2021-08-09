@@ -11,6 +11,7 @@
       :edit-button="false"
       :update-many-mode="false"
       :watch-for-creation="true"
+      mode="ServerSide"
       delete-mode="both"
       primary-key="id"
     ></crud>
@@ -27,6 +28,8 @@ import ExtendedControllerMixin from '@/utils/crud/mixins/extended-controller'
 import { mapMutations, mapActions } from 'vuex'
 
 export default {
+  //
+
   mixins: [
     ExtendedControllerMixin,
     FieldsInfoMixin,
