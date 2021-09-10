@@ -34,8 +34,8 @@ let crmRoutes = [
     component: Positions,
   },
   {
-    path: 'company-comments',
-    name: 'companyComments',
+    path: 'package',
+    name: 'package',
     component: CompanyComments,
   },
   {

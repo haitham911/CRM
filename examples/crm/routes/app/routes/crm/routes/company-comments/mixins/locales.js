@@ -13,7 +13,7 @@ export default {
         },
       },
       en: {
-        detailsTitle: 'Company - comment',
+        detailsTitle: 'package',
         fields: {
           id: 'Id',
           company: 'Company',

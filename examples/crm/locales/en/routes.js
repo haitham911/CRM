@@ -10,7 +10,7 @@ export default {
     companyTypes: 'Company Types',
     companyCommentTypes: 'Companies - comment types',
     personCommentTypes: 'People - comment types',
-    companyComments: 'Companies - comments',
+    package: 'package',
     personComments: 'People - comments',
     positionTasks: 'Positions - tasks',
     tasks: 'Tasks',

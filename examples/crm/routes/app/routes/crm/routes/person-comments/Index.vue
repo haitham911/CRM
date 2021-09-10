@@ -23,18 +23,17 @@ export default {
   data () {
     return {
       prefix: 'crud/crm',
-      path: 'person-comments',
+      path: 'package',
       paths: {
-        i: 'crm/person-comments',
-        st: 'crm/person-comments',
-        u: 'crm/person-comments',
+        i: 'crm/package',
+        st: 'crm/package',
+        u: 'crm/package',
       },
-      pageTitle: 'crm.personComments',
+      pageTitle: 'crm.package',
     }
   },
   components: {
     Crud,
   },
 }
-
 </script>

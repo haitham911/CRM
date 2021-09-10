@@ -93,6 +93,10 @@ export default {
             text: 'crm.leads',
             route: '/leads',
           },
+          {
+            text: 'crm.package',
+            route: '/package',
+          },
         ],
       },
       {
