@@ -7,6 +7,15 @@ export default {
           name: 'id',
           details: false,
         },
+        {
+          type: 'input',
+          column: 'sync',
+          text: 'Sync Last Updates/ Sync ID',
+          grid: 'xs12 sm6 md4 lg6 xl4',
+          name: 'sync',
+
+          multiedit: false,
+        },
 
         {
           type: 'input',
