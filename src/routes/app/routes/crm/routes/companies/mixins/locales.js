@@ -8,6 +8,8 @@ export default {
         },
         fields: {
           Leads: 'Leads',
+          Points: 'Points',
+
           id: 'Id',
           name: 'Nazwa',
           commonName: 'Nazwa użytkowa',

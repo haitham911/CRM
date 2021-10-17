@@ -97,6 +97,10 @@ export default {
             text: 'crm.package',
             route: '/package',
           },
+          {
+            text: 'crm.Points',
+            route: '/points',
+          },
         ],
       },
       {

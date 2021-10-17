@@ -1,5 +1,4 @@
 import Companies from './routes/companies/Index.vue'
-import People from './routes/people/Index.vue'
 
 import Positions from './routes/positions/Index.vue'
 
@@ -14,6 +13,7 @@ import CompanyTypes from './routes/company-types/Index.vue'
 
 import CompanyCommentTypes from './routes/company-comment-types/Index.vue'
 import PersonCommentTypes from './routes/person-comment-types/Index.vue'
+import Points from './routes/points/Index.vue'
 
 import Tasks from './routes/tasks/Index.vue'
 
@@ -24,9 +24,9 @@ let crmRoutes = [
     component: Companies,
   },
   {
-    path: 'people',
-    name: 'people',
-    component: People,
+    path: 'points',
+    name: 'points',
+    component: Points,
   },
   {
     path: 'positions',

@@ -4,6 +4,8 @@ export default {
   },
   crm: {
     Leads: 'Leads',
+    Points: 'Points',
+    points: 'Points',
     name: 'CRM',
     companies: 'Companies',
     people: 'People',

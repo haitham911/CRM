@@ -1,6 +1,5 @@
 export default {
-  api:
-    'https://crmbackend.compareha.com/api' /* type http://crm-api.id-a.pl/api if you want to use demo API http://127.0.0.1:8000/api */,
+  api: 'https://crmbackend.compareha.com/api', // 'http://127.0.0.1:8000/api', /* 'https://crmbackend.compareha.com/api'  type http://crm-api.id-a.pl/api if you want to use demo API http://127.0.0.1:8000/api */
   prefix: 'auth',
   paths: {
     login: 'login',
